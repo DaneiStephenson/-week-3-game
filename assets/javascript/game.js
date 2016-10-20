@@ -4,6 +4,7 @@
         var letter = "";
         var numberOfTries = 9;
         var win = 0, lose = 0;
+        var guessesO = [];
         
         function letterGenerator() {
             var letters = "abcdefghijklmnopqrstuvwxyz";
@@ -17,8 +18,10 @@
                console.log(letter);
         }
         letterGenerator();
-        /*/function gamePlay(letter) {
-          document.addEventListener('keyPress', function(event))
+        function gamePlay(letter) {
+          document.onkeydown = function(event){
+             var pick = event.charCode;
+             guessesO.push(pick);
             if(event.charCode == letter) {
                 win++;
                 document.getElementById("wins").innerHTML = win;
@@ -39,14 +42,15 @@
                 }
             }
         }
-/*/
-/*/
+    }
+
+
         function gameRestart() {
-            document.getElementById("guesses").innerHTML = null;
+            document.getElementById("guesses").innerHTML = guessesO;
             document.getElementById("guessesLeft").innerHTML = numberOfTries;
             letterGenerator();
         }
    
-/
-    gameRestart();/*/
+
+    gameRestart();
  
