@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<link href="css/reset.css" rel="stylesheet">
+
+
+
+
+<head>
+    <title>Guessing Game</title>
+</head>
+
+<body>
+
+<script type="text/javascript" src="game.js"></script>
+
+<h1> Guess what letter I'm thinking of ... </h1>
+<h2 > Win:
+    <p id="winS"></p>
+</h2>
+
+<h2> Losses:
+<p id="lostS"></p>
+
+</h2>
+
+<h2> Guesses Left:
+<p id=triesS></p>
+
+</h2>
+<h3>
+
+
+       Guess Here: <input type="text" onkeydown="setGuess(event)" maxLength="1" title="Letter guess">
+       <button onclick="playGame()" > Submit </button>
+
+
+    
+</h3>
+
+<div>
+    Your Guesses so far:
+    <script>
+        document.write(guess);
+    </script>
+</div>
+</body>
+
+</html>
