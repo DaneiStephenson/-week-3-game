@@ -7,14 +7,18 @@
         
         function letterGenerator() {
             var letters = "abcdefghijklmnopqrstuvwxyz";
-            var randomLetter = Math.floor(Math.random()*letters.length);
-    
-            letter = letters.charAt(randomLetter);
-            gamePlay(letter);
-        }
 
-        function gamePlay(letter) {
-            document.addEventListener('keyPress', function(event))
+            var randomLetter = Math.floor(Math.random()*letters.length);
+            console.log(randomLetter);
+
+
+            letter = letters.charAt(randomLetter);
+            /*/gamePlay(letter);/*/
+               console.log(letter);
+        }
+        letterGenerator();
+        /*/function gamePlay(letter) {
+          document.addEventListener('keyPress', function(event))
             if(event.charCode == letter) {
                 win++;
                 document.getElementById("wins").innerHTML = win;
@@ -35,13 +39,14 @@
                 }
             }
         }
-
+/*/
+/*/
         function gameRestart() {
             document.getElementById("guesses").innerHTML = null;
             document.getElementById("guessesLeft").innerHTML = numberOfTries;
             letterGenerator();
         }
    
-
-    gameRestart();
+/
+    gameRestart();/*/
  
