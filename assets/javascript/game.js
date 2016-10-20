@@ -1,54 +1,47 @@
+ 
+      
+        
+        var letter = "";
+        var numberOfTries = 9;
+        var win = 0, lose = 0;
+        
+        function letterGenerator() {
+            var letters = "abcdefghijklmnopqrstuvwxyz";
+            var randomLetter = Math.floor(Math.random()*letters.length);
+    
+            letter = letters.charAt(randomLetter);
+            gamePlay(letter);
+        }
 
-    var tries = 7;
-    var win = 0;
-    var lost = 0;
-    var letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-    var compLetter = "";
-    var guess = '';
-    var random =0;
+        function gamePlay(letter) {
+            document.addEventListener('keyPress', function(event))
+            if(event.charCode == letter) {
+                win++;
+                document.getElementById("wins").innerHTML = win;
+                gameRestart();
+            }
+            else {
+                document.getElementById("guesses").innerHTML += event.charCode;
+                numberOfTries--;
 
-    //Set Computer Guess
+                if (numberOfTries == 0){
+                    lose++;
+                    document.getElementById("losses").innerHTML = lose;
+                    gameRestart();
+                } 
+                else {
+                    document.getElementById("guessesLeft").innerHTML = numberOfTries;
+                    gamePlay(letter);
+                }
+            }
+        }
 
-    //Random number generator
-    function getRandomIntInclusive(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        random = Math.floor(Math.random() * (max - min + 1)) + min;
-        return random;
-    }
-    random = getRandomIntInclusive(0,25);
+        function gameRestart() {
+            document.getElementById("guesses").innerHTML = null;
+            document.getElementById("guessesLeft").innerHTML = numberOfTries;
+            letterGenerator();
+        }
+   
 
-    // get Random Char
-    function getRandomCharacter(random,letters){
-        compLetter = letters[random];
-        return compLetter
-    }
-     compLetter = getRandomCharacter(random, letters);
-
-    console.log(random);
-    console.log(compLetter);
-
-
-
-
-    function setGuess(event){
-        x = event.keyCode;
-        guess = (String.fromCharCode(x));
-        return guess;
-    }
-
-
-
-
-    function playGame(){
-        document.getElementById(winS).innerHTML= "Heey";
-        console.log("you won");
-      if (guess == compLetter)
-      {
-          win = win+1;
-          //document.getElementById(winS).innerHTML= "Heey";
-          console.log("you won");
-      }
-    }
-
+    gameRestart();
  

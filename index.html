@@ -1,48 +1,29 @@
 <!DOCTYPE html>
-<html>
-<link href="css/reset.css" rel="stylesheet">
+<html lang="en">
+    <head>
 
+    <link href="assets/css/reset.css" rel="stylesheet">
 
-
-
-<head>
-    <title>Guessing Game</title>
-</head>
-
-<body>
-
-<script type="text/javascript" src="game.js"></script>
-
-<h1> Guess what letter I'm thinking of ... </h1>
-<h2 > Win:
-    <p id="winS"></p>
-</h2>
-
-<h2> Losses:
-<p id="lostS"></p>
-
-</h2>
-
-<h2> Guesses Left:
-<p id=triesS></p>
-
-</h2>
-<h3>
-
-
-       Guess Here: <input type="text" onkeydown="setGuess(event)" maxLength="1" title="Letter guess">
-       <button onclick="playGame()" > Submit </button>
-
-
+ <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <meta charset="utf-8">
+    <style>
+        span {
+            display: inline
+        }
+    </style>
     
-</h3>
+    <title>Psychic Game</title>
+    </head>
+    <body>
+   
 
-<div>
-    Your Guesses so far:
-    <script>
-        document.write(guess);
-    </script>
-</div>
-</body>
+        <h1>The Psychic Game</h1>
+        <p>Guess what letter I'm thinking of</p>
+        <p>Wins: <span id="wins"></span></p>
+        <p>Losses: <span id="losses"></span></p>
+        <p>Guesses Left: <span id="guessesLeft"></span></p>
+        <p>Your Guesses so far: <span id="guesses"></span></p>
 
-</html>
+      
+    </body>
+</html> 
